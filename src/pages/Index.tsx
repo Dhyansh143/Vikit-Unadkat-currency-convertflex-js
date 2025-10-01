@@ -1,20 +1,20 @@
 import { CurrencyConverter } from "@/components/CurrencyConverter";
-import { Coins } from "lucide-react";
+import { Briefcase, Globe, Shield, Zap, Building2, TrendingUp } from "lucide-react";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-subtle">
-      <div className="container mx-auto px-4 py-12">
+    <div className="min-h-screen bg-background">
+      <div className="container mx-auto px-4 py-16">
         {/* Header */}
-        <header className="text-center mb-12 animate-fade-in">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-primary mb-4 shadow-glow">
-            <Coins className="h-8 w-8 text-primary-foreground" />
+        <header className="text-center mb-16 animate-fade-in">
+          <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-secondary mb-6 shadow-glow">
+            <Briefcase className="h-10 w-10 text-secondary-foreground" />
           </div>
-          <h1 className="text-5xl font-bold mb-3 bg-gradient-primary bg-clip-text text-transparent">
+          <h1 className="text-6xl font-black mb-4 text-primary font-heading">
             Currency Converter
           </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Convert between 150+ currencies with live exchange rates
+          <p className="text-xl text-foreground font-medium max-w-3xl mx-auto">
+            Professional Currency Exchange Solutions for Global Business
           </p>
         </header>
 
@@ -24,42 +24,42 @@ const Index = () => {
         </main>
 
         {/* Features */}
-        <section className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-          <div className="text-center p-6 rounded-xl bg-card/50 backdrop-blur-sm border border-border/50 animate-slide-up" style={{ animationDelay: "0.1s" }}>
-            <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-              <span className="text-2xl">⚡</span>
+        <section className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="text-center p-8 rounded-2xl bg-card border-2 border-primary/20 shadow-elegant animate-slide-up hover:shadow-glow transition-all duration-300" style={{ animationDelay: "0.1s" }}>
+            <div className="w-16 h-16 rounded-full bg-gradient-secondary flex items-center justify-center mx-auto mb-5 shadow-lg">
+              <Zap className="h-8 w-8 text-secondary-foreground" />
             </div>
-            <h3 className="font-semibold mb-2 text-foreground">Real-Time Rates</h3>
-            <p className="text-sm text-muted-foreground">
-              Live exchange rates updated continuously from global markets
+            <h3 className="text-xl font-bold mb-3 text-primary">Real-Time Rates</h3>
+            <p className="text-base text-foreground font-medium">
+              Live exchange rates updated continuously from global financial markets
             </p>
           </div>
           
-          <div className="text-center p-6 rounded-xl bg-card/50 backdrop-blur-sm border border-border/50 animate-slide-up" style={{ animationDelay: "0.2s" }}>
-            <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-              <span className="text-2xl">🌍</span>
+          <div className="text-center p-8 rounded-2xl bg-card border-2 border-primary/20 shadow-elegant animate-slide-up hover:shadow-glow transition-all duration-300" style={{ animationDelay: "0.2s" }}>
+            <div className="w-16 h-16 rounded-full bg-gradient-secondary flex items-center justify-center mx-auto mb-5 shadow-lg">
+              <Globe className="h-8 w-8 text-secondary-foreground" />
             </div>
-            <h3 className="font-semibold mb-2 text-foreground">150+ Currencies</h3>
-            <p className="text-sm text-muted-foreground">
-              Support for all major world currencies and popular crypto assets
+            <h3 className="text-xl font-bold mb-3 text-primary">150+ Currencies</h3>
+            <p className="text-base text-foreground font-medium">
+              Complete support for all major world currencies and international exchange
             </p>
           </div>
           
-          <div className="text-center p-6 rounded-xl bg-card/50 backdrop-blur-sm border border-border/50 animate-slide-up" style={{ animationDelay: "0.3s" }}>
-            <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-              <span className="text-2xl">🔒</span>
+          <div className="text-center p-8 rounded-2xl bg-card border-2 border-primary/20 shadow-elegant animate-slide-up hover:shadow-glow transition-all duration-300" style={{ animationDelay: "0.3s" }}>
+            <div className="w-16 h-16 rounded-full bg-gradient-secondary flex items-center justify-center mx-auto mb-5 shadow-lg">
+              <Shield className="h-8 w-8 text-secondary-foreground" />
             </div>
-            <h3 className="font-semibold mb-2 text-foreground">Fast & Secure</h3>
-            <p className="text-sm text-muted-foreground">
-              Instant conversions with enterprise-grade security standards
+            <h3 className="text-xl font-bold mb-3 text-primary">Fast & Secure</h3>
+            <p className="text-base text-foreground font-medium">
+              Enterprise-grade security with instant conversion calculations
             </p>
           </div>
         </section>
 
         {/* Footer */}
-        <footer className="mt-16 text-center pb-8">
-          <p className="text-sm text-muted-foreground">
-            Created by <span className="font-semibold text-foreground">Vikit Unadkat</span>
+        <footer className="mt-20 text-center pb-8 border-t-2 border-primary/10 pt-8">
+          <p className="text-base text-primary font-bold">
+            Created by <span className="text-secondary">Vikit Unadkat</span>
           </p>
         </footer>
       </div>

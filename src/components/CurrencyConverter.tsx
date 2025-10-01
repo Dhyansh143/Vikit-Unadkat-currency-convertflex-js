@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ArrowDownUp, TrendingUp, RefreshCw } from "lucide-react";
+import { ArrowDownUp, TrendingUp, RefreshCw, DollarSign, Building2 } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -100,17 +100,18 @@ export const CurrencyConverter = () => {
   };
 
   return (
-    <div className="w-full max-w-2xl mx-auto animate-slide-up">
-      <Card className="p-8 shadow-elegant backdrop-blur-sm bg-card/95 border-border/50">
+    <div className="w-full max-w-3xl mx-auto animate-slide-up">
+      <Card className="p-8 shadow-elegant backdrop-blur-sm bg-card border-2 border-primary/10">
         <div className="space-y-6">
           {/* From Currency Section */}
           <div className="space-y-3">
-            <label className="text-sm font-medium text-muted-foreground">
+            <label className="text-sm font-semibold text-primary flex items-center gap-2">
+              <Building2 className="h-4 w-4" />
               From
             </label>
             <div className="flex gap-4">
               <Select value={fromCurrency} onValueChange={setFromCurrency}>
-                <SelectTrigger className="w-[180px] bg-background border-border">
+                <SelectTrigger className="w-[200px] bg-background border-2 border-primary/20 font-medium">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -124,13 +125,16 @@ export const CurrencyConverter = () => {
                   ))}
                 </SelectContent>
               </Select>
-              <Input
-                type="text"
-                value={amount}
-                onChange={(e) => handleAmountChange(e.target.value)}
-                className="flex-1 text-2xl font-semibold bg-background border-border"
-                placeholder="0.00"
-              />
+              <div className="flex-1 relative">
+                <DollarSign className="absolute left-4 top-1/2 -translate-y-1/2 h-6 w-6 text-muted-foreground" />
+                <Input
+                  type="text"
+                  value={amount}
+                  onChange={(e) => handleAmountChange(e.target.value)}
+                  className="flex-1 text-2xl font-bold bg-background border-2 border-primary/20 pl-12"
+                  placeholder="0.00"
+                />
+              </div>
             </div>
           </div>
 
@@ -140,20 +144,21 @@ export const CurrencyConverter = () => {
               onClick={handleSwapCurrencies}
               variant="outline"
               size="icon"
-              className="rounded-full w-12 h-12 bg-gradient-primary text-primary-foreground hover:shadow-glow transition-all duration-300 border-0"
+              className="rounded-full w-14 h-14 bg-gradient-secondary text-secondary-foreground hover:shadow-glow transition-all duration-300 border-0 hover:scale-110"
             >
-              <ArrowDownUp className="h-5 w-5" />
+              <ArrowDownUp className="h-6 w-6" />
             </Button>
           </div>
 
           {/* To Currency Section */}
           <div className="space-y-3">
-            <label className="text-sm font-medium text-muted-foreground">
+            <label className="text-sm font-semibold text-primary flex items-center gap-2">
+              <Building2 className="h-4 w-4" />
               To
             </label>
             <div className="flex gap-4">
               <Select value={toCurrency} onValueChange={setToCurrency}>
-                <SelectTrigger className="w-[180px] bg-background border-border">
+                <SelectTrigger className="w-[200px] bg-background border-2 border-primary/20 font-medium">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -167,7 +172,7 @@ export const CurrencyConverter = () => {
                   ))}
                 </SelectContent>
               </Select>
-              <div className="flex-1 px-4 py-3 rounded-lg bg-gradient-primary text-primary-foreground text-2xl font-semibold flex items-center">
+              <div className="flex-1 px-6 py-4 rounded-lg bg-gradient-secondary text-secondary-foreground text-3xl font-bold flex items-center justify-center shadow-glow">
                 {isLoading ? (
                   <span className="animate-pulse-glow">Loading...</span>
                 ) : (
@@ -178,20 +183,20 @@ export const CurrencyConverter = () => {
           </div>
 
           {/* Exchange Rate Info */}
-          <div className="pt-6 border-t border-border">
-            <div className="flex items-center justify-between text-sm">
-              <div className="flex items-center gap-2 text-muted-foreground">
-                <TrendingUp className="h-4 w-4" />
+          <div className="pt-6 border-t-2 border-primary/10">
+            <div className="flex items-center justify-between text-sm flex-wrap gap-4">
+              <div className="flex items-center gap-2 text-primary font-semibold">
+                <TrendingUp className="h-5 w-5 text-secondary" />
                 <span>
                   1 {fromCurrency} = {formatCurrency(getExchangeRate(), toCurrency)} {toCurrency}
                 </span>
               </div>
               <Button
                 onClick={fetchExchangeRates}
-                variant="ghost"
+                variant="outline"
                 size="sm"
                 disabled={isLoading}
-                className="text-muted-foreground hover:text-foreground"
+                className="text-primary border-primary/30 hover:bg-primary hover:text-primary-foreground font-medium"
               >
                 <RefreshCw className={`h-4 w-4 mr-2 ${isLoading ? "animate-spin" : ""}`} />
                 {lastUpdated ? `Updated ${lastUpdated}` : "Refresh"}
@@ -202,8 +207,9 @@ export const CurrencyConverter = () => {
       </Card>
 
       {/* Info Card */}
-      <Card className="mt-4 p-4 bg-muted/50 border-border/50">
-        <p className="text-sm text-muted-foreground text-center">
+      <Card className="mt-6 p-5 bg-primary/5 border-2 border-primary/20">
+        <p className="text-sm text-primary font-medium text-center flex items-center justify-center gap-2">
+          <TrendingUp className="h-4 w-4 text-secondary" />
           Exchange rates are updated in real-time using live market data
         </p>
       </Card>
