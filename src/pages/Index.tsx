@@ -55,6 +55,13 @@ const Index = () => {
             </p>
           </div>
         </section>
+
+        {/* Footer */}
+        <footer className="mt-16 text-center pb-8">
+          <p className="text-sm text-muted-foreground">
+            Created by <span className="font-semibold text-foreground">Vikit Unadkat</span>
+          </p>
+        </footer>
       </div>
     </div>
   );
