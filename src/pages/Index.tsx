@@ -1,12 +1,19 @@
 import { CurrencyConverter } from "@/components/CurrencyConverter";
-import { Briefcase, Globe, Shield, Zap, Building2, TrendingUp, Calculator } from "lucide-react";
+import { Briefcase, Globe, Shield, Zap, Calculator } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { LogoutButton } from "@/components/LogoutButton";
+import { UserStats } from "@/components/UserStats";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-16">
+        {/* Logout Button */}
+        <div className="flex justify-end mb-4">
+          <LogoutButton />
+        </div>
+        
         {/* Header */}
         <header className="text-center mb-16 animate-fade-in">
           <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-secondary mb-6 shadow-glow">
@@ -69,7 +76,8 @@ const Index = () => {
         </section>
 
         {/* Footer */}
-        <footer className="mt-20 text-center pb-8 border-t-2 border-primary/10 pt-8">
+        <footer className="mt-20 text-center pb-8 border-t-2 border-primary/10 pt-8 space-y-4">
+          <UserStats />
           <p className="text-base text-primary font-bold">
             Created by <span className="text-secondary">Vikit Unadkat</span>
           </p>

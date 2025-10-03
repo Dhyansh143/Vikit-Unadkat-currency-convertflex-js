@@ -2,18 +2,23 @@ import { SalaryCalculator } from "@/components/SalaryCalculator";
 import { Calculator, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { LogoutButton } from "@/components/LogoutButton";
+import { UserStats } from "@/components/UserStats";
 
 const SalaryCalculatorPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-16">
-        {/* Back Button */}
-        <Link to="/">
-          <Button variant="ghost" className="mb-8">
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            Back to Home
-          </Button>
-        </Link>
+        {/* Navigation */}
+        <div className="flex justify-between items-center mb-8">
+          <Link to="/">
+            <Button variant="ghost">
+              <ArrowLeft className="mr-2 h-4 w-4" />
+              Back to Home
+            </Button>
+          </Link>
+          <LogoutButton />
+        </div>
 
         {/* Header */}
         <header className="text-center mb-16 animate-fade-in">
@@ -34,7 +39,8 @@ const SalaryCalculatorPage = () => {
         </main>
 
         {/* Footer */}
-        <footer className="mt-20 text-center pb-8 border-t-2 border-primary/10 pt-8">
+        <footer className="mt-20 text-center pb-8 border-t-2 border-primary/10 pt-8 space-y-4">
+          <UserStats />
           <p className="text-base text-primary font-bold">
             Created by <span className="text-secondary">Vikit Unadkat</span>
           </p>
