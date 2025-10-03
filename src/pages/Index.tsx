@@ -1,5 +1,7 @@
 import { CurrencyConverter } from "@/components/CurrencyConverter";
-import { Briefcase, Globe, Shield, Zap, Building2, TrendingUp } from "lucide-react";
+import { Briefcase, Globe, Shield, Zap, Building2, TrendingUp, Calculator } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 const Index = () => {
   return (
@@ -21,6 +23,16 @@ const Index = () => {
         {/* Main Converter */}
         <main>
           <CurrencyConverter />
+          
+          {/* Salary Calculator Link */}
+          <div className="mt-12 text-center">
+            <Link to="/salary-calculator">
+              <Button size="lg" className="gap-2 text-lg px-8 py-6 shadow-glow hover:shadow-xl transition-all">
+                <Calculator className="h-6 w-6" />
+                Merchant Navy Salary Calculator
+              </Button>
+            </Link>
+          </div>
         </main>
 
         {/* Features */}
