@@ -32,7 +32,7 @@ const POPULAR_CURRENCIES = [
 export const CurrencyConverter = () => {
   const [amount, setAmount] = useState<string>("1");
   const [fromCurrency, setFromCurrency] = useState<string>("USD");
-  const [toCurrency, setToCurrency] = useState<string>("EUR");
+  const [toCurrency, setToCurrency] = useState<string>("INR");
   const [exchangeRates, setExchangeRates] = useState<ExchangeRates>({});
   const [convertedAmount, setConvertedAmount] = useState<number>(0);
   const [isLoading, setIsLoading] = useState<boolean>(false);
